@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest();
-xhr.open('GET', "https://api.7digital.com/1.2/track/search?shopId=2020&oauth_consumer_key=7d4vr6cgb392&q=i&usageTypes=adsupportedstreaming&page=2", true);
+xhr.open('GET', "https://api.7digital.com/1.2/track/search?shopId=2020&oauth_consumer_key=7d4vr6cgb392&q=i&usageTypes=adsupportedstreaming", true);
 xhr.send();
 
 xhr.onreadystatechange = processRequest;

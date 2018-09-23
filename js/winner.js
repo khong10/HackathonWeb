@@ -5,21 +5,19 @@ window.onload = function(){
                   {name: "May", follower: 20, following:300, songId: 200, img:"../2.png"},
                   {name: "Peter", follower: 15, following:500, songId: 300, img:"../img/3.png"},
                   {name: "Davince", follower: 30, following:60, songId: 400, img:"../img/4.png"}];
-    var songs = [{songId: 100, songName: "Love Me Like You Do", singerName: "Ellie Goulding", vote: 20}, 
-                 {songId: 200, songName: "Shape of You", singerName:"Ed Sheeran", vote: 10},
-                 {songId: 300, songName: "Shape of You", singerName:"Ed Sheeran", vote: 30},
-                 {songId: 400, songName: "Shape of You", singerName:"Ed Sheeran", vote: 50}];
-
+    var songs = [{Id: 100, songName: "Love Me Like You Do", singerName: "Ellie Goulding", vote: 20}, 
+                 {Id: 200, songName: "Shape of You", singerName:"Ed Sheeran", vote: 10},
+                 {Id: 300, songName: "Shape of You", singerName:"Ed Sheeran", vote: 30},
+                 {Id: 400, songName: "Shape of You", singerName:"Ed Sheeran", vote: 50}];
 
     var tBody = document.querySelector("#data");
 
     var i, j;
     var temp = Object.create(member);
-    var count = 0;
-    var rank = [];
     for (i = songs.length - 1; i > 0; i--) {
         for (j = 0; j < i; j++) {
             if (songs[j].vote > songs[j+1].vote) {
+<<<<<<< HEAD
 
                 temp.songId = songs[j].songId;
                 temp.songName = songs[j].songName;
@@ -40,26 +38,29 @@ window.onload = function(){
                 
                 console.log(songs[j].songId);
                 
+=======
+                temp = songs[j];
+                songs[j]= songs[j+1];
+                songs[j+1] = temp; 
+>>>>>>> a569c002972ff0c4f5a307a419c1f6bb39ce5a2e
             }
         }
-        if(count > 10) break;
     }
 
     var valid = false;
-    var tempMember = "";
 
-    for(i = 0; i < rank.length; i++){
-        for(j = 0; j < member.length && valid == 0; j++){
-        valid = rank[i].songId == member[j].songId ? 1: 0;
+    for(i = 0; i < 4; i++){
+        for(j = 0; j < member.length || valid == false; j++){
+        valid = (songs[i].Id == member[j].songId)? false: true;
             if(valid) {
-                tempMember = tempMember[j].name;
-                var row  = createTextRow([rank[i].songName, rank[i].singerName, tempMember]);
+                var row  = createTextRow([songs[i].songName, songs[i].singerName, member[j].name]);
                 var tdElem = document.createElement("td");
                 var imgElem = document.createElement("img");
-                imgElem.src = rank[i].img;
+                imgElem.src = member[i].img;
                 tdElem.appendChild(imgElem);
                 row.appendChild(tdElem);
-                tBody.appendChild(row);		
+                tBody.appendChild(row);	
+                break;
             }
         }	
     }
