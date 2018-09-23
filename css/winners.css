@@ -1,7 +1,15 @@
+
 img {
     width: 120px;
     height: 120px;
 }
+.container{
+    text-align: center;
+    font-family: 'Fjalla One', sans-serif;
+}
 
+body {
+    text-align: center;
+}
 
 
