@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Battle</title>
+    <h2>Battle</h2>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="battlepage.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+</head>
+<body>
+
+        <div class="singerpic" id="singerpc"> 
+                <audio controls >
+                        <source src="https://scs.senecac.on.ca/~patrick.crawford/shared/fall-2016/int222/Track03.mp3"
+                         type: "audio/mpeg">
+                </audio>
+               <img class="singer" src="img/2.png" alt="Singer1">
+                <img class="singer" src="img/4.png" alt="Singer2"> 
+        </div>
+
+        <br>
+        <div>
+         <input id="AF" type="button" value="AFollow">
+         <label id="LAF">0</label>
+        
+        
+        <input id="BF" type="button" value="BFollow">
+        <label id="LBF">0</label>
+                
+        <input id="AV" type="button" value="AVote">
+        <label id="LAV">0</label>
+              
+        <input id="BV" type="button" value="BVote">
+        <label id="LBV">0</label>
+        
+        <input id="BReset" type="button" value="Reset">
+    
+       </div>
+              
+<p>battle</p>
+<script>
+var audio = {
+    controls: true, 
+    source: [
+        {src: "https://scs.senecac.on.ca/~patrick.crawford/shared/fall-2016/int222/Track03.mp3", type: "audio/mpeg"},
+        {src: "https://scs.senecac.on.ca/~patrick.crawford/shared/fall-2016/int222/Track03.ogg", type: "audio/ogg"}
+    ]
+};
+window.onload=function(){
+    var audioContainer=document.querySelector("#outputaudio1");
+   var audioout="<audio";
+   if(audio.controls==true)
+       audioout+=" controls>";
+    else audioout+=">";
+   for (var i=0; i<audio.source.length;i++){
+       audioout+='<source src="'+audio.source[i].src+'" type="'
+       +audio.source[i].type+'"/>';
+   }
+   audioContainer.innerHTML+=audioout+"</audio>";
+   setTimeout(function(){
+                $("#AV").prop("disabled",true);
+                $("#BV").prop("disabled",true);
+         },0);  
+   setTimeout(function(){
+                $("#AV").prop("disabled",false);
+                $("#BV").prop("disabled",false);
+         },10000);
+   setTimeout(function(){
+                $("#AV").prop("disabled",true);
+                $("#BV").prop("disabled",true);
+         },120000);  
+};
+   
+        
+        var numAF=100;
+        var numBF=100;
+        var numAV=100;
+        var numBV=100;
+        $("#LAF").text(numAF);
+        $("#LBF").text(numBF);
+        $("#LAV").text(numAV);
+        $("#LBV").text(numBV);
+        
+        $("#AF").click(function(){ 
+        if($(this).val()=="AFollow"){
+            $(this).val("AUnfollow");
+            numAF++;
+        }
+        else if($(this).val()=="AUnfollow"){
+            $(this).val("AFollow");
+            numAF--;
+        }
+        $("#LAF").text(numAF);
+        });
+        
+        $("#BF").click(function(){ 
+        if($(this).val()=="BFollow"){
+            $(this).val("BUnfollow");
+            numBF++;
+        }
+        else if($(this).val()=="BUnfollow"){
+            $(this).val("BFollow");
+            numBF--;
+        }
+        $("#LBF").text(numBF);
+        });
+        
+        
+        
+        $("#AV").click(function(){
+        
+        $(this).val("AVoted");
+        numAV++;
+        $(this).prop("disabled","true");
+        
+        if ( ($("#BV").prop("disabled")== true ) )
+        {
+                numBV--;
+                $("#BV").prop("disabled",false)
+        }
+        
+        $("#LAV").text(numAV);
+        $("#LBV").text(numBV);
+        });
+        
+        $("#BV").click(function(){
+        
+        $(this).val("BVoted");
+        numBV++;
+        $(this).prop("disabled","true");
+        
+        if ( ($("#AV").prop("disabled")== true ) )
+        {
+                numAV--;
+                $("#AV").prop("disabled",false)
+        }
+        
+        $("#LAV").text(numAV);
+        $("#LBV").text(numBV);
+        });
+        
+        $("#BReset").click(function(){
+        
+        
+        if ( ($("#AV").prop("disabled")== true ) )
+        {
+                $("#AV").prop("disabled",false);
+                numAV--;
+        }
+        
+        if ( ($("#BV").prop("disabled")== true ) )
+        {
+                $("#BV").prop("disabled",false);
+                numBV--;
+        }
+        
+        if ($("#AF").val()=="AUnfollow")
+        {
+                $("#AF").val("AFollow");
+                numAF--;
+        }
+        
+        if ($("#BF").val()=="BUnfollow")
+        {
+                $("#BF").val("BFollow");
+                numBF--;
+        }
+            
+        $("#LAV").text(numAV);
+        $("#LBV").text(numBV);
+        $("#LAF").text(numAF);
+        $("#LBF").text(numBF);
+        });
+        
+        </script>
+</body>
+</html>
+
+
