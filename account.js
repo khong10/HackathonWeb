@@ -38,5 +38,4 @@ window.onload = function() {
     para3 += "Following: " + member[b].following + "</p>";
 
     memberContainer.innerHTML+= paraImg + spanF + para + para2 + para3;
-
 };

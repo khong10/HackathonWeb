@@ -20,11 +20,26 @@ window.onload = function(){
     for (i = songs.length - 1; i > 0; i--) {
         for (j = 0; j < i; j++) {
             if (songs[j].vote > songs[j+1].vote) {
-                temp = songs[j];
-                songs[j]= songs[j+1];
-                songs[j+1] = temp;
-                rank[count++] = temp; 
-                this.console.log(rank[i].vote);    
+
+                temp.songId = songs[j].songId;
+                temp.songName = songs[j].songName;
+                temp.singerName = songs[j].singerName;
+                temp.vote = songs[j].vote;
+
+                
+                songs[j].songId = songs[j+1].songId;
+                songs[j].songName = songs[j+1].songName;
+                songs[j].singerName = songs[j+1].songName;
+                songs[j].vote = songs[j+1].vote;
+
+                
+                songs[j+1].songId = temp.songId;
+                songs[j+1].songName = temp.songName;
+                songs[j+1].singerName = temp.singerName;
+                songs[j+1].vote = temp.vote;
+                
+                console.log(songs[j].songId);
+                
             }
         }
         if(count > 10) break;
