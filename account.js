@@ -4,8 +4,7 @@ var member = [{memberId: 100, name: "John", follower: 10, following:50, songId: 
               {memberId: 400, name: "Davince", follower: 30, following:60, songId: 400, songName: "Shape of You", img:"./img/4.png"},
 ];
 
-var songs = [{songId: 100, songName: "Love Me Like You Do", singerName: "Ellie Goulding"}, 
-             {songId: 200, songName: "Shape of You", singerName:"Ed Sheeran"}];
+
 
 window.onload = function() {
 
@@ -16,6 +15,7 @@ window.onload = function() {
             b = i;
         }
     }
+    
 
     var memberContainer = document.querySelector("#memberArray");
    
@@ -38,5 +38,4 @@ window.onload = function() {
     para3 += "Following: " + member[b].following + "</p>";
 
     memberContainer.innerHTML+= paraImg + spanF + para + para2 + para3;
-
 };
