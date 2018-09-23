@@ -21,7 +21,6 @@ function processRequest(e) {
                        follower: follower,
                        trackId: element.track['@attributes'].id});
         });
-          object=shuffle(object);
 		var tBody = document.querySelector("#data");
 
 	for(i = 0; i < object.length; i++){
@@ -46,17 +45,6 @@ function processRequest(e) {
 			rowElement.appendChild(col);
 		}
 		return rowElement;
-	}
-
-	function shuffle(a) {
-		var j, x, i;
-		for (i = a.length - 1; i > 0; i--) {
-			j = Math.floor(Math.random() * (i + 1));
-			x = a[i];
-			a[i] = a[j];
-			a[j] = x;
-		}
-		return a;
 	}
 
 function StringToXMLDom(string){
