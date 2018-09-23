@@ -1,26 +1,30 @@
 
 window.onload = function(){
 
-    var member = [{memberId: 100, name: "John", follower: 10, following:50, songId: 100, img:"/Users/yuciou/Desktop/HackathonWeb/img/1.png",},
-    {memberId: 200, name: "May", follower: 20, following:300, songId: 200,img:"/Users/yuciou/Desktop/HackathonWeb/img/2.png" },
-    {memberId: 300, name: "Peter", follower: 15, following:500, songId: 300, img:"/Users/yuciou/Desktop/HackathonWeb/img/3.png"},
-    {memberId: 400, name: "Davince", follower: 30, following:60, songId: 400, img:"/Users/yuciou/Desktop/HackathonWeb/img/4.png"}];
-var songs = [{songId: 100, songName: "Love Me Like You Do", singerName: "Ellie Goulding", vote: 20}, 
-   {songId: 200, songName: "Shape of You", singerName:"Ed Sheeran", vote: 10}];
+    var member = [{name: "John", follower: 10, following:50, songId: 100, img:"../img/1.png"},
+                  {name: "May", follower: 20, following:300, songId: 200, img:"../2.png"},
+                  {name: "Peter", follower: 15, following:500, songId: 300, img:"../img/3.png"},
+                  {name: "Davince", follower: 30, following:60, songId: 400, img:"../img/4.png"}];
+    var songs = [{songId: 100, songName: "Love Me Like You Do", singerName: "Ellie Goulding", vote: 20}, 
+                 {songId: 200, songName: "Shape of You", singerName:"Ed Sheeran", vote: 10},
+                 {songId: 300, songName: "Shape of You", singerName:"Ed Sheeran", vote: 30},
+                 {songId: 400, songName: "Shape of You", singerName:"Ed Sheeran", vote: 50}];
 
 
     var tBody = document.querySelector("#data");
 
-    var i, j, temp;
+    var i, j;
+    var temp = Object.create(member);
     var count = 0;
     var rank = [];
     for (i = songs.length - 1; i > 0; i--) {
         for (j = 0; j < i; j++) {
-            if (songs[j] > songs[j+1]) {
+            if (songs[j].vote > songs[j+1].vote) {
                 temp = songs[j];
-                songs[j] = songs[j+1];
+                songs[j]= songs[j+1];
                 songs[j+1] = temp;
-                rank[count++] = temp;
+                rank[count++] = temp; 
+                this.console.log(rank[i].vote);    
             }
         }
         if(count > 10) break;
@@ -38,7 +42,6 @@ var songs = [{songId: 100, songName: "Love Me Like You Do", singerName: "Ellie G
                 var tdElem = document.createElement("td");
                 var imgElem = document.createElement("img");
                 imgElem.src = rank[i].img;
-                imgElem.alt = "Avatar";
                 tdElem.appendChild(imgElem);
                 row.appendChild(tdElem);
                 tBody.appendChild(row);		
