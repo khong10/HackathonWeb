@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Bootstrap required meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Links to stylesheets and scripts -->
+  <link href="../css/structure.css" type="text/css" rel="stylesheet"> 
+  <link href="../css/winners.css" type="text/css" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/winner_proto.js"></script>
+
+  <title>Our App</title>
+  
+</head>
+<body>
+
+<!-- NavBar -->
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid"> 
+    <nav>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="home.html" class="active">Home</a>
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+      </button>
+    </div>
+	  <div class="collapse navbar-collapse" id="myNavbar">
+		    <ul class="nav navbar-nav navbar-right"> 
+		        <li><a href="compete.html">Compete</a></li>
+		        <li><a href="winner.html">Winners</a></li>
+		        <li><a href="account.html">Account</a></li>
+		    </li>
+		    </ul>
+	  </div>
+   </nav>
+
+<h3>Winners!!!</h3>
+<div class="container">
+    <div id = winning>
+        <div class="panel panel-default">
+            <table border="4" class="table table-hover">
+	            <div class="panel-heading">
+                <thead>
+                    <tr>
+                        <th>VOTE &nbsp; &nbsp;</th>
+                        <th>SONG &nbsp; &nbsp;</th>
+                        <th>ARTIST &nbsp; &nbsp;</th>
+                        <th>IMG &nbsp; &nbsp;</th>
+                    </tr>
+                </thead>
+            </div>
+            <tbody id="data">
+                <tr id="nodata"> </tr>
+            </tbody>
+            </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

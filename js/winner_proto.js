@@ -25,9 +25,8 @@ function processRequest(e) {
 		var tBody = document.querySelector("#data");
 
 	for(i = 0; i < object.length; i++){
-		var row = createTextRow([object[i].artist,
-		object[i].track,
-		object[i].image, object[i].trackId]);
+		var row = createTextRow([object[i].vote, object[i].track, 
+			object[i].artist]);
 		var tdElem = document.createElement("td");
 		var imgElem = document.createElement("img");
 		imgElem.src = object[i].image;

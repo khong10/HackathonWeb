@@ -1,22 +1,56 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Structure</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="structure.css">
-	
-	<script type="text/javascript" src="structure.js"></script>
+<html lang="en">
 
+<head>
+
+  <!-- Bootstrap required meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Links to stylesheets and scripts -->  
+  <link href="../css/structure.css" type="text/css" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/account.js"></script>
+ 
+  <title>Our App</title>
+  
 </head>
+
 <body>
 
-<ul id="menu">
-  <li><a href="home.html">Home</a></li>
-  <li><a href="account.html">Account</a></li>
-  <li><a href="compete.html">Compete</a></li> 
-  <li><a href="winners.html">Winners</a></li>
-</ul>
-<p>account</p>
+<!-- NavBar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid"> 
+    <div class="navbar-header">
+      <a class="navbar-brand" href="home.html" class="active">Home</a>
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+	
+	<div class="collapse navbar-collapse" id="myNavbar">
+		<ul class="nav navbar-nav navbar-right"> 
+		  <li><a href="compete.html">Compete</a></li>
+		  <li><a href="winner.html">Winners</a></li>
+		  <li><a href="account.html">Account</a></li>
+		</li>
+		</ul>
+	</div>
+  </div>
+</nav>
+
+    <div class="panel panel-success">
+		<div class="panel-heading">Showing Information for Artist:</div>
+		<blockquote class="blockquote">
+		  <div style="text-align: center;">
+		  <div class="panel-body" id="memberArray" style="display: inline-block; text-align: left";></div>
+		</blockquote>
+    </div>
 </body>
+
 </html>
