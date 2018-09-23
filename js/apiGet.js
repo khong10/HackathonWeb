@@ -16,7 +16,7 @@ function processRequest(e) {
                        trackId: element.track['@attributes'].id});
         });
       	object=shuffle(object);
-      	console.log(object);
+      	window.data=object;  	
     }
 }
 
