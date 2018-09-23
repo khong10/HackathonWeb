@@ -1,46 +1,96 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-	font: 15px calibri;
-	position: static;
-    top: 0; 
-    width: 100%;
-	float: left;
-}
-
-li {
-    display:inline-block;
-    float: left;
-    margin-right: 1px;
-	margin-bottom: 1px;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 48px;
-    text-decoration: none;
-	border-right: 1px solid #ccc;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #2f3036;
-}
-
-/*Make all menu links full width*/
-ul li, li a {
-    width: auto;
+* {
+  box-sizing: border-box;
 }
 
 body {
-	overflow: auto;
-	background-color: #EBF5FB;
+	background-color: #f6f6f6;
+	background-image: url("img/bg.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size:cover;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	margin:0;
+	padding:0!important;
+}
+
+.navbar {
+    position: relative;
+	border:1px solid transparent;
+	min-height: 80px;
+	border-top: 0;
+	border-bottom:1px solid #e7e7e7;
+	margin-bottom:0;
+}
+
+.navbar-default {
+  height: 60px;
+}
+
+.navbar-brand {
+    float:left;
+    font-size:18px;
+    line-height:10px;
+    height:60px;
+    padding:0 15px;
+}
+
+.navbar-toggle {
+	margin-top: 23px;
+	padding: 9px 10px !important;
+}
+
+
+.navbar-home {
+  float: left;
+  font-size: 18px;
+  line-height: 60px;
+  height: 60px;
+  padding: 0 15px;
+}
+
+.navbar-toggle {
+  margin-top: 23px;
+  padding: 9px 10px !important;
+}
+
+.navbar-nav > li > a {
+  display: flex;
+  align-items: center;   
+  height: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+  border-left: 1px solid #e7e7e7;
+}
+
+.navbar-left {
+  float: left !important;
+}
+
+.navbar-right {
+  float: right !important;
+  margin-right: -15px;
+} 
+
+.navbar-nav > li > .dropdown-menu {
+  margin-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+div {
+	text-align: center;
+	width: auto;
+}
+
+@media (min-width: 768px) {
+  .logo-center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+  }
 }
