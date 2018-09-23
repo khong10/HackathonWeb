@@ -1,31 +1,3 @@
-var xhr = new XMLHttpRequest();
-xhr.open('GET', "https://api.7digital.com/1.2/track/search?shopId=2020&oauth_consumer_key=7d4vr6cgb392&q=i&usageTypes=adsupportedstreaming", true);
-xhr.send();
-
-xhr.onreadystatechange = processRequest;
-function processRequest(e) {
-    if (xhr.readyState == 4) {
-      	var object = [];
-        var response = xhr.responseText;
-      	var responseJSON = xmlToJson(StringToXMLDom(response));
-      	let random = Math.random();
-        responseJSON.response.searchResults.searchResult.forEach(element => {
-          let vote=Math.floor(parseFloat(element.score['#text'])*200*random);
-          let follower = Math.floor(vote*0.8);
-          object.push({track:element.track.title['#text'], 
-                       artist:element.track.artist.name['#text'], 
-                       image: element.track.artist.image['#text'],
-                       score:element.score['#text'], 
-                       vote: vote,
-                       follower: follower,
-                       trackId: element.track['@attributes'].id});
-        });
-      	object=shuffle(object);
-      	window.data=object;  	
-      	console.log(window.data);
-    }
-}
-
 function shuffle(a) {
     var j, x, i;
     for (i = a.length - 1; i > 0; i--) {
