@@ -1,5 +1,3 @@
-console.log("start");
-
 var xhr = new XMLHttpRequest();
 xhr.open('GET', "https://api.7digital.com/1.2/track/search?shopId=2020&oauth_consumer_key=7d4vr6cgb392&q=i&usageTypes=adsupportedstreaming", true);
 xhr.send();
@@ -17,8 +15,20 @@ function processRequest(e) {
                        score:element.score, 
                        trackId: element.track['@attributes'].id});
         });
+      	object=shuffle(object);
       	console.log(object);
     }
+}
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
 }
 
 function StringToXMLDom(string){
