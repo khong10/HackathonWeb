@@ -8,15 +8,21 @@ function processRequest(e) {
       	var object = [];
         var response = xhr.responseText;
       	var responseJSON = xmlToJson(StringToXMLDom(response));
+      	let random = Math.random();
         responseJSON.response.searchResults.searchResult.forEach(element => {
-          object.push({track:element.track.title, 
-                       artist:element.track.artist.name, 
-                       image: element.track.artist.image,
-                       score:element.score, 
+          let vote=Math.floor(parseFloat(element.score['#text'])*200*random);
+          let follower = Math.floor(vote*0.8);
+          object.push({track:element.track.title['#text'], 
+                       artist:element.track.artist.name['#text'], 
+                       image: element.track.artist.image['#text'],
+                       score:element.score['#text'], 
+                       vote: vote,
+                       follower: follower,
                        trackId: element.track['@attributes'].id});
         });
       	object=shuffle(object);
       	window.data=object;  	
+      	console.log(window.data);
     }
 }
 
