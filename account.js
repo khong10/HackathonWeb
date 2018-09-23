@@ -7,28 +7,35 @@ var member = [{memberId: 100, name: "John", follower: 10, following:50, songId: 
 var songs = [{songId: 100, songName: "Love Me Like You Do", singerName: "Ellie Goulding"}, 
              {songId: 200, songName: "Shape of You", singerName:"Ed Sheeran"}];
 
-
 window.onload = function() {
+
+    var a = 300;
+    var b;
+    for (var i = 0; i < member.length; i++){
+        if(a == member[i].memberId){
+            b = i;
+        }
+    }
 
     var memberContainer = document.querySelector("#memberArray");
    
     var paraImg = "<p>";
     var myImageStr = " ";
-    myImageStr += "<img alt= '" +"profile image" + "' src='" + member[0].img + "' />";
+    myImageStr += "<img class = 'profile' alt= '" +"profile image" + "' src='" + member[b].img + "' />";
     paraImg += myImageStr;
     paraImg += '</p>';
 
-    var spanF = "<span>";
-    spanF += "Member ID: " + member[0].memberId + "</span>";
+    var spanF = "<span class = 'memID'>";
+    spanF += "Member ID: " + member[b].memberId + "</span>";
        
-    var para = "<p>";
-    para += "Member Name: " + member[0].name + "</p>";
+    var para = "<p class = 'memName'>";
+    para += "Member Name: " + member[b].name + "</p>";
 
-    var para2 = "<p>";
-    para2 += "Follower: " + member[0].follower + "</p>";
+    var para2 = "<p class = 'memFollower'>";
+    para2 += "Follower: " + member[b].follower + "</p>";
 
-    var para3 = "<p>";
-    para3 += "Following: " + member[0].following + "</p>";
+    var para3 = "<p class = 'memFollowing'>";
+    para3 += "Following: " + member[b].following + "</p>";
 
     memberContainer.innerHTML+= paraImg + spanF + para + para2 + para3;
 
