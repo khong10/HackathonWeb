@@ -30,7 +30,14 @@ function processRequest(e) {
 		var imgElem = document.createElement("img");
 		imgElem.src = object[i].image;
 		imgElem.alt = "Avatar";
+		var audio = document.createElement("audio");
+		audio.controls=true;
+		var source = document.createElement("source");
+		source.src="../audio/"+object[i].trackId+".mp3";
+		audio.appendChild(source);
+		console.log(audio);
 		tdElem.appendChild(imgElem);
+		tdElem.appendChild(audio);
 		row.appendChild(tdElem);
 		tBody.appendChild(row);		
 	}
