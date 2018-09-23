@@ -8,55 +8,9 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 </head>
-
-<head>
-
-  <!-- Bootstrap required meta -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Links to stylesheets and scripts -->  
-  <link href="structure.css" type="text/css" rel="stylesheet"> 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-  <title>Our App</title>
-  
-</head>
-
-
-
 <body>
-		<!-- NavBar -->
-		<div class="navbar navbar-default navbar-fixed-top">
-		  <div class="container-fluid"> 
-			<div class="navbar-header">
-			  <a class="navbar-brand" href="home.html" class="active">Home</a>
-			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>                        
-			  </button>
-			</div>
-			
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right"> 
-				  <li><a href="compete.html">Compete</a></li>
-				  <li><a href="winner.html">Winners</a></li>
-				  <li><a href="account.html">Account</a></li>
-				</li>
-				</ul> 
-			</div>
-		  </div>
-		</nav>
 
-        <div class="singerpic" id="singerpc"> 
-                <audio controls >
-                        <source src="https://scs.senecac.on.ca/~patrick.crawford/shared/fall-2016/int222/Track03.mp3"
-                         type: "audio/mpeg">
-                </audio>
+        <div class="singerpic" id="outputaudio1"> 
                <img class="singer" src="img/2.png" alt="Singer1">
                 <img class="singer" src="img/4.png" alt="Singer2"> 
         </div>
@@ -65,7 +19,7 @@
         <div>
          <input id="AF" type="button" value="AFollow">
          <label id="LAF">0</label>
-         
+        
         
         <input id="BF" type="button" value="BFollow">
         <label id="LBF">0</label>
@@ -111,7 +65,8 @@ window.onload=function(){
    setTimeout(function(){
                 $("#AV").prop("disabled",true);
                 $("#BV").prop("disabled",true);
-         },120000);  
+         },120000);
+     
 };
    
         
@@ -214,8 +169,8 @@ window.onload=function(){
         $("#LAF").text(numAF);
         $("#LBF").text(numBF);
         });
-        
         </script>
 </body>
 </html>
+
 
